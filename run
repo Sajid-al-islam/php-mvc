@@ -1,0 +1,43 @@
+<?php
+// exec('php -S localhost:8000');
+$files = array_diff(scandir(realpath('commands')), array('.', '..'));
+
+foreach ($files as $file) {
+    include realpath('commands/' . $file);
+}
+
+use Command\MakeController;
+use Command\MakeModel;
+
+// print_r($argv);
+
+$command = $argv[1];
+
+$params = [];
+if (count($argv) > 2) {
+    unset($argv[0]);
+    unset($argv[1]);
+    $params = array_values($argv);
+}
+
+switch ($command) {
+    case 'serve':
+        exec('php -S localhost:8000');
+        break;
+    case 'make:model':
+        new MakeModel(...$params);
+        break;
+    case 'make:controller':
+        new MakeController(...$params);
+        break;
+    case 'migrate':
+        include(realpath('database/migrate.php'));
+        break;
+    case 'seed':
+        include(realpath('database/seed.php'));
+        break;
+    case 'migrate-seed':
+        include(realpath('database/migrate.php'));
+        include(realpath('database/seed.php'));
+        break;
+}

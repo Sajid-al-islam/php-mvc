@@ -1,0 +1,19 @@
+{
+    "name": "hungry/mvc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "database\\seeders\\": "database/seeders"
+        }
+    },
+    "authors": [
+        {
+            "name": "Md-shefat-masum",
+            "email": "mshefat924@gmail.com"
+        }
+    ],
+    "require": {
+        "larapack/dd": "^1.1",
+        "doctrine/inflector": "^2.0"
+    }
+}
