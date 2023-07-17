@@ -1,5 +1,5 @@
 <?php
-// include_once('./resource/views/includes/header.php');
+
 resource_include('includes/header');
 ?>
 <section class="my-5 py-5">
@@ -26,7 +26,7 @@ resource_include('includes/header');
                             <button class="btn btn-info">submit</button>
                         </form>
                         <?php
-                        dd(session()->all());
+                        // dd(session()->all());
                         ?>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ resource_include('admin/layouts/header');
             <div class="container my-5 py-5">
                 <div class="card">
                     <div class="card-header">
-                        <h2>blog list</h2>
+                        <h2>Job list</h2>
                     </div>
                     <div class="card-body">
                         <table class="table text-center table-border table-striped">
@@ -21,6 +21,7 @@ resource_include('admin/layouts/header');
                                     <th>title</th>
                                     <th>description</th>
                                     <th>image</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,6 +33,9 @@ resource_include('admin/layouts/header');
                                         <td><?= $value->description ?></td>
                                         <td>
                                             <img width="100px" src="<?= assets($value->image) ?>" alt="">
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary">Apply</button>
                                         </td>
                                     </tr>
                                 <?php

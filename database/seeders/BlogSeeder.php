@@ -14,42 +14,42 @@ class BlogSeeder
         $blog->truncate();
 
         $blog->insert([
-            'title' => "learn html ",
+            'title' => "Full stack web developer",
             'description' => "
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
         ]);
         $blog->insert([
-            'title' => "t amet consectetur, adipisicing elit. ",
+            'title' => "Php developer",
             'description' => "
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
         ]);
         $blog->insert([
-            'title' => "adipisicing elit. Enim mole",
+            'title' => "MERN stack developer",
             'description' => "
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
         ]);
         $blog->insert([
-            'title' => "dolor sit amet consectetur, adipisicing elit ",
+            'title' => "Digital marketing specialist",
             'description' => "
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
         ]);
         $blog->insert([
-            'title' => " sit amet consectetur ",
+            'title' => "SEO Expert",
             'description' => "
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
         ]);
         $blog->insert([
-            'title' => "Lorem ipsum dolor sit amet consectetur ",
+            'title' => "Technical writer",
             'description' => "
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
