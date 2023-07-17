@@ -15,6 +15,31 @@ class WebsiteController
             'blogs' => $blog->select('*')->get()
         ]);
     }
+
+    public function register()
+    {
+        return view('auth/register');
+    }
+
+    public function register_submit() {
+
+        // dd(request()->all())
+        $user = new User();
+
+
+        $inserted_data = $user->insert([
+            'first_name' => request()->first_name,
+            'second_name' => request()->second_name,
+            'age' => request()->age,
+            'email' => request()->email,
+            'phone_number' =>request()->phone_number,
+            'password' => md5(request()->password)
+        ]);
+
+        session()->put('register_success_message','Signed up successfully!');
+        return redirect('/admin');
+    }
+
     public function about()
     {
         $user = new User();

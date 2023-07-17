@@ -1,11 +1,11 @@
 <?php
 // include_once('./includes/header.php');
 resource_include('includes/header', [
-    'page_name' => 'home page',
+    'page_name' => 'Main section',
 ]);
 ?>
 
-<section>
+<!-- <section>
     <div class="container">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -61,7 +61,69 @@ resource_include('includes/header', [
             ?>
         </div>
     </div>
-</section>
+</section> -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="hero d-flex align-items-center">
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 d-flex flex-column justify-content-center">
+      <h1 data-aos="fade-up">Meet Hirehub</h1>
+      <h2 data-aos="fade-up" data-aos-delay="400">Simplify your hunt for the perfect job and
+            find your ideal fit now.</h2>
+      <div data-aos="fade-up" data-aos-delay="600">
+        <div class="text-center text-lg-start">
+          <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+            <span>Get Started</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+      <img src="<?= assets('frontend/') ?>assets/img/hero-img.png" class="img-fluid" alt="">
+    </div>
+  </div>
+</div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3>Who We Are</h3>
+              <h2>Meet Hirehub.</h2>
+              <p>
+                Simplify your hunt for the perfect job and
+                find your ideal fit now.
+              </p>
+              <div class="text-center text-lg-start">
+                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="<?= assets('frontend/') ?>assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+    
+
+  </main><!-- End #main -->
 
 <?php
 // include_once('./includes/header.php');

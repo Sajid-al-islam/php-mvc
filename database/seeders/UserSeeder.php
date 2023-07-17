@@ -12,21 +12,24 @@ class UserSeeder
         $user->truncate();
 
         $user->insert([
-            'name' => 'tarek',
+            'first_name' => 'mr',
+            'second_name' => 'tarek',
             'email' => 'tarek@gmail.com',
-            'contact' => '+8801256456253',
+            'phone_number' => '+8801256456253',
             'password' => md5('12345678'),
         ]);
         $user->insert([
-            'name' => 'sharif',
+            'first_name' => 'sharif',
+            'second_name' => 'ahmed',
             'email' => 'sharif@gmail.com',
-            'contact' => '+8801256456253',
+            'phone_number' => '+8801256456253',
             'password' => md5('12345678'),
         ]);
         $user->insert([
-            'name' => 'shefat',
+            'first_name' => 'shefatullah',
+            'second_name' => 'masum',
             'email' => 'shefat@gmail.com',
-            'contact' => '+8801256456253',
+            'phone_number' => '+8801256456253',
             'password' => md5('12345678'),
         ]);
     }

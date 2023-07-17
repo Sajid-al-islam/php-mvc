@@ -13,6 +13,8 @@ $app->get('/contact','WebsiteController@contact');
 $app->post('/contact/submit','ContactController@contact_submit');
 
 $app->get('/login','WebsiteController@login');
+$app->get('/register','WebsiteController@register');
+$app->post('/register/submit','WebsiteController@register_submit');
 $app->post('/login/submit','WebsiteController@login_submit');
 $app->get('/logout','Auth\AuthController@logout');
 

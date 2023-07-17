@@ -30,7 +30,7 @@ resource_include('admin/layouts/header');
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="">description</label>
-                                        <textarea name="description" class="form-control"></textarea>
+                                        <textarea id="myTextarea" name="description" class="form-control"></textarea>
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="">image</label>
@@ -52,3 +52,11 @@ resource_include('admin/layouts/header');
 <?php
 resource_include('admin/layouts/footer');
 ?>
+
+<script>
+ClassicEditor
+    .create(document.querySelector("#myTextarea"))
+    .catch(error => {
+        console.error( error );
+    } );
+</script>
