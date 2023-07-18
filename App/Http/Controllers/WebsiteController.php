@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
+use App\Models\Location;
 use App\Models\User;
 use Symfony\Component\VarDumper\Cloner\Data;
 
@@ -44,12 +45,29 @@ class WebsiteController
         return redirect('/admin');
     }
 
-    public function jobs()
+    public function jobs($location=null)
     {
+        
+        $location_get = new Location();
         $job = new Job();
+
+        if(isset($location)) {
+            $data = $job->select('*')->where('location', '=' ,$location)->get();
+            $locations = $location_get->select('*')->get();
+
+            return view('jobs', [
+                'data' => $data,
+                'locations' => $locations
+            ]);
+        }
+
         $data = $job->select('*')->get();
-        return view('about', ['data' => $data]);
-        // return view('about');
+        $locations = $location_get->select('*')->get();
+
+        return view('jobs', [
+            'data' => $data,
+            'locations' => $locations
+        ]);
     }
     public function contact()
     {
@@ -63,7 +81,7 @@ class WebsiteController
     {
         echo " job details";
         // dd($_REQUEST);
-        // dd($id, $title);
+        dd($id, $title);
     }
     public function profile_details()
     {

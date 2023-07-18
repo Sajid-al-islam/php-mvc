@@ -31,7 +31,7 @@ $app->post('/admin/job/create/store','Admin\AdminController@job_create_store');
 
 // jobseeker routes
 $app->get('/jobseeker/dashboard','Admin\JobseekerController@dashboard');
-$app->get('/jobseeker/jobs','Admin\JobseekerController@job_lists');
+$app->get('/jobseeker/jobs','Admin\JobseekerController@job_lists')->params('location');
 
 
 $app->start();

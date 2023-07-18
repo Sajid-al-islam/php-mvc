@@ -35,7 +35,7 @@ resource_include('admin/layouts/header');
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="job_location">Job location</label>
-                                        <select name="location_id" class="form-control" id="job_location">
+                                        <select name="location" class="form-control" id="job_location">
                                         <?php
                                             foreach ($locations as $item) {
                                             ?>

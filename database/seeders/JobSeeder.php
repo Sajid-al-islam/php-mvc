@@ -19,6 +19,7 @@ class JobSeeder
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
+            'location' => 'Newzland'
         ]);
         $job->insert([
             'title' => "Php developer",
@@ -26,6 +27,7 @@ class JobSeeder
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
+            'location' => 'America'
         ]);
         $job->insert([
             'title' => "MERN stack developer",
@@ -33,6 +35,8 @@ class JobSeeder
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
+            'location' => 'Iraq'
+
         ]);
         $job->insert([
             'title' => "Digital marketing specialist",
@@ -40,6 +44,8 @@ class JobSeeder
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
+            'location' => 'Bagdad'
+
         ]);
         $job->insert([
             'title' => "SEO Expert",
@@ -47,6 +53,7 @@ class JobSeeder
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
+            'location' => 'Tehran'
         ]);
         $job->insert([
             'title' => "Technical writer",
@@ -54,6 +61,7 @@ class JobSeeder
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim molestiae modi officia beatae! Necessitatibus, corrupti cupiditate itaque, voluptatum vero id magni nemo aspernatur quae fugit officia dolor soluta adipisci minima.
             ",
             'image' => '1.jpg',
+            'location' => 'Silicon valley'
         ]);
     }
 }

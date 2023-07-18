@@ -1,11 +1,11 @@
 <?php
 check_jobseeker_permission();
-resource_include('admin/layouts/header');
+resource_include('jobseeker/layouts/header');
 ?>
 
 <div id="layoutSidenav">
     <?php
-        resource_include('admin/layouts/navbar');
+        resource_include('jobseeker/layouts/navbar');
     ?>
     <div id="layoutSidenav_content">
         <main>
@@ -20,5 +20,5 @@ resource_include('admin/layouts/header');
 </div>
 
 <?php
-resource_include('admin/layouts/footer');
+resource_include('jobseeker/layouts/footer');
 ?>

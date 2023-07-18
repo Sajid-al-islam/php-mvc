@@ -25,6 +25,7 @@ resource_include('admin/layouts/header');
                     <thead>
                         <tr>
                             <th>title</th>
+                            <th>Location</th>
                             <th>description</th>
                             <th>image</th>
                             <th>Action</th>
@@ -36,9 +37,10 @@ resource_include('admin/layouts/header');
                         ?>
                             <tr>
                                 <td><?= $value->title ?></td>
+                                <td><?= $value->location ?></td>
                                 <td>
                                     <?php
-                                        $new_string =  mb_strimwidth($value->description, 0, 100, "...");
+                                        $new_string =  mb_strimwidth($value->description, 0, 90, "...");
                                         
                                         print($new_string);
                                     ?>

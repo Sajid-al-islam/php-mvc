@@ -11,7 +11,7 @@ class JobMigration
             $table->string('title',100)->nullable();
             $table->text('description')->nullable();
             $table->string('image',50)->nullable();
-            $table->bigInteger('location_id')->nullable();
+            $table->string('location')->nullable();
             $table->status();
             $table->timestamp();
         });

@@ -54,16 +54,12 @@ class AdminController
 
         $inserted_data = $job->insert([
             'title' => request()->title,
+            'location' => request()->location,
             'description' => request()->description,
             'image' => $image_name,
         ]);
 
         session()->put('success_message','Job created successfully');
         return back();
-
-        // $image = new \Intervention\Image\Image();
-        // $image->make('/public/1.jpg');
-        // $img->save('newimage.jpg');
-        // dd($inserted_data,$_FILES,assets('1.jpg'));
     }
 }

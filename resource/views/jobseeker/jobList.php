@@ -2,13 +2,13 @@
 check_permission();
 
 
-resource_include('admin/layouts/header');
+resource_include('jobseeker/layouts/header');
 ?>
 
 
 <div id="layoutSidenav">
     <?php
-    resource_include('admin/layouts/navbar');
+    resource_include('jobseeker/layouts/navbar');
     ?>
     <div id="layoutSidenav_content">
         <main>
@@ -47,9 +47,8 @@ resource_include('admin/layouts/header');
                                     <img width="100px" src="<?= assets($value->image) ?>" alt="">
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-warning mb-2">view</button>
-                                    <button class="btn btn-sm btn-primary mb-2">edit</button>
-                                    <button class="btn btn-sm btn-danger mb-2">delete</button>
+                                    <button class="btn btn-sm btn-warning mb-2">Apply now</button>
+                                    <button class="btn btn-sm btn-primary mb-2">Details</button>
                                 </td>
                             </tr>
                         <?php
@@ -63,5 +62,5 @@ resource_include('admin/layouts/header');
 </div>
 
 <?php
-resource_include('admin/layouts/footer');
+resource_include('jobseeker/layouts/footer');
 ?>

@@ -24,7 +24,28 @@
   <link href="<?= assets('frontend/') ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <link href="<?= assets('frontend/') ?>assets/css/style.css" rel="stylesheet">
-
+  <style>
+    .btn-get-started {
+      margin-top: 30px;
+      line-height: 0;
+      padding: 15px 40px;
+      border-radius: 4px;
+      transition: 0.5s;
+      color: #fff;
+      background: #4154f1;
+      box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+    }
+    .filter_btn {
+      margin-top: 45px;
+      line-height: 10px;
+      padding: 15px 15px;
+      border-radius: 4px;
+      transition: 0.5s;
+      color: #fff;
+      background: #4154f1;
+      box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+    }
+  </style>
 </head>
 
 <body>
@@ -47,37 +68,30 @@
           if (auth()->check()) {
           ?>
 
-              <li class="nav-item">
-                  <?php
-                    if (auth()->user('role') == 'admin') {
-                  ?>
-                    <a class="nav-link" href="/admin">admin</a>
-                  <?php
-                  }
-                  else {
-                  ?>
-                    <a class="nav-link" href="jobseeker/dashboard">Dashboard</a>
-                  <?php } ?>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" onclick="return confirm('do you want to logout?')" href="/logout">logout</a>
-              </li>
+            <li class="nav-item">
+              <?php
+              if (auth()->user('role') == 'admin') {
+              ?>
+                <a class="nav-link" href="/admin">admin</a>
+              <?php
+              } else {
+              ?>
+                <a class="nav-link" href="jobseeker/dashboard">Dashboard</a>
+              <?php } ?>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="return confirm('do you want to logout?')" href="/logout">logout</a>
+            </li>
           <?php
-          }
-          else {
+          } else {
           ?>
             <li><a class="nav-link scrollto" href="/login">login</a></li>
             <li><a class="getstarted scrollto" href="/register">Sign up</a></li>
           <?php } ?>
-           
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
-
-  
-
-  
-
