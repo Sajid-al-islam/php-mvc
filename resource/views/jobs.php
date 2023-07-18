@@ -14,13 +14,14 @@ resource_include('includes/header');
                     <div class="col">
                         <label for="job_location">Filter by location</label>
                         <select name="location" class="form-control" id="job_location">
-                        <?php
+                            <option value="">Select</option>
+                            <?php
                             foreach ($locations as $item) {
                             ?>
                                 <option name="location" value="<?= $item->name ?>"><?= $item->name ?></option>
                             <?php
                             }
-                        ?>
+                            ?>
                         </select>
                     </div>
                     <div class="col">
@@ -32,6 +33,25 @@ resource_include('includes/header');
             </form>
         </div>
         <div class="row">
+            <?php if (session()->get('job_success_message')) { ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong><?= session()->get('job_success_message') ?></strong>
+                    <?php
+                    session()->forget('job_success_message')
+                    ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+
+            <?php if (session()->get('job_error_message')) { ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong><?= session()->get('job_error_message') ?></strong>
+                    <?php
+                    session()->forget('job_error_message')
+                    ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
             <?php
             foreach ($data as $key => $item) {
 
@@ -47,9 +67,9 @@ resource_include('includes/header');
                                     <h5 class="card-title"><?= $item->title ?></h5>
                                     <p class="card-text">
                                         <?php
-                                            $new_string =  mb_strimwidth($item->description, 0, 300, "...");
-                                            
-                                            print($new_string);
+                                        $new_string =  mb_strimwidth($item->description, 0, 300, "...");
+
+                                        print($new_string);
                                         ?>
                                     </p>
 
@@ -59,7 +79,7 @@ resource_include('includes/header');
                                         <span>Read Description</span>
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
-                                    <a href="/register" class="btn-get-started d-inline-flex align-items-center justify-content-center align-self-center">
+                                    <a href="/job/apply_now?id=<?= $item->id ?>" class="btn-get-started d-inline-flex align-items-center justify-content-center align-self-center">
                                         <span>Apply for the job</span>
                                         <i class="bi bi-arrow-right"></i>
                                     </a>

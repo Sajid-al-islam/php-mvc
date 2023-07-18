@@ -32,18 +32,18 @@ class AuthController
     public function login($email, $password)
     {
         $user = new User();
-        $data = $user->select()->where('email','=',$email)->find();
+        $data = $user->select('*')->where('email','=',$email)->find();
         if($data){
             if($data->password == md5($password)){
                 session()->put('user',$data);
                 session()->put('is_auth',true);
                 return true;
             }else{
-                session()->put('error_message','password does not matched');
+                session()->put('error_message','credintial does not matched');
                 return false;
             }
         }else{
-            session()->put('error_message','email incorrect');
+            session()->put('error_message','your account is not found');
             return false;
         }
     }

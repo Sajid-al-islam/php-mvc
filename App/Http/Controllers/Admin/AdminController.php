@@ -32,6 +32,18 @@ class AdminController
         ]);
     }
 
+    public function job_edit($id) {
+        $job = new Job();
+
+        $data = $job->select('*')->where('id', '=', $id)->find($id);
+        $locations = new Location();
+
+        return view('admin/editJob', [
+            'data' => $data,
+            'locations' => $locations->select('*')->get()
+        ]);
+    }
+
     public function job_details($job_id)
     {
         $job = new Job();
@@ -83,5 +95,34 @@ class AdminController
 
         session()->put('success_message','Job created successfully');
         return back();
+    }
+
+    public function job_update($id)
+    {
+        $job = new Job();
+        $job_check = $job->select('*')->where('id', '=', $id)->find();
+        
+
+        if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+            $image_name = 'uploads/' . time() . $_FILES["image"]["name"];
+            move_uploaded_file($_FILES["image"]["tmp_name"], 'public/' . $image_name);
+            
+        } else {
+            
+            $image_name = $job_check->image;
+        
+        }
+        
+
+        $job->where('id', '=', $id)->update([
+            'title' => request()->title,
+            'location' => request()->location,
+            'description' => request()->description,
+            'image' => $image_name,
+        ]);
+        
+
+        session()->put('success_message','Job updated successfully');
+        return redirect('/admin/jobs');
     }
 }

@@ -11,7 +11,24 @@ resource_include('includes/header');
         </header>
 
         <div class="row gy-4">
-
+            <?php if (session()->get('register_error_message')) { ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong><?= session()->get('register_error_message') ?></strong>
+                    <?php
+                    session()->forget('register_error_message')
+                    ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+            <?php if (session()->get('register_success_message')) { ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong><?= session()->get('register_success_message') ?></strong>
+                    <?php
+                    session()->forget('register_success_message')
+                    ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
             <div class="col-lg-6">
                 <img src="<?= assets('frontend/') ?>assets/img/features-2.png" class="img-fluid" alt="">
             </div>
@@ -48,6 +65,7 @@ resource_include('includes/header');
                             <input type="password" class="form-control" name="confirm_password" placeholder="confirm password" required="">
                         </div>
 
+                        <div class="g-recaptcha" data-sitekey="6LebkTUnAAAAAOsu--WaEh6nGcC47FiuM3CbjXkb"></div>
 
                         <div class="col-md-12 text-center">
                             <!-- <div class="loading">Loading</div>

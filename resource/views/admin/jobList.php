@@ -13,14 +13,13 @@ resource_include('admin/layouts/header');
     <div id="layoutSidenav_content">
         <main>
             <div class="container my-5">
-                <!-- <div class="card">
-                    <div class="card-header">
-                        <h2>Job list</h2>
-                    </div>
-                    <div class="card-body">
-                        
-                    </div>
-                </div> -->
+            <div class="text-success">
+                <?= session()->get('success_message') ?>
+                <?php
+                session()->forget('success_message')
+                ?>
+            </div>
+                <h2 class="my-5 text-center">All jobs</h2>
                 <table id="datatablesSimple" class="table table-border table-striped">
                     <thead>
                         <tr>
@@ -50,7 +49,7 @@ resource_include('admin/layouts/header');
                                 </td>
                                 <td>
                                     <a href="/admin/job/details?id=<?= $value->id ?>" class="btn btn-sm btn-warning mb-2">view</a>
-                                    <!-- <a class="btn btn-sm btn-primary mb-2">edit</a> -->
+                                    <a href="/admin/job/edit?id=<?= $value->id ?>" class="btn btn-sm btn-primary mb-2">edit</a>
                                     <a onclick="return confirm('Are you sure, you want to delete?')" href="/admin/job/delete?id=<?= $value->id ?>" class="btn btn-sm btn-danger mb-2">delete</a>
                                 </td>
                             </tr>

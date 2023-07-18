@@ -45,6 +45,16 @@ resource_include('includes/header');
 
         <div class="row gy-4">
 
+            <?php if (session()->get('error_message')) { ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong><?= session()->get('error_message') ?></strong>
+                    <?php
+                    session()->forget('error_message')
+                    ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+            
             <div class="col-lg-6">
                 <img src="<?= assets('frontend/') ?>assets/img/features-2.png" class="img-fluid" alt="">
             </div>
@@ -62,9 +72,6 @@ resource_include('includes/header');
                             </div>
                         </div>
 
-                        <div class="text-danger py-2">
-                            <?= session()->get('error_message') ?>
-                        </div>
 
                         <div class="col-md-12">
                             <div class="form-group mb-4">

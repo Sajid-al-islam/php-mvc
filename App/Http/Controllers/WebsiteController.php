@@ -28,21 +28,71 @@ class WebsiteController
 
     public function register_submit() {
 
-        $user = new User();
+        $secretKey = "6LebkTUnAAAAAIxBcVW_4DrmhrrcNk4aC6QTOXW4";
 
+        // Verify reCAPTCHA response
+        $response = $_POST['g-recaptcha-response'];
+        $remoteIP = $_SERVER['REMOTE_ADDR'];
+        $url = "https://www.google.com/recaptcha/api/siteverify";
+        $data = array(
+            'secret' => $secretKey,
+            'response' => $response,
+            'remoteip' => $remoteIP
+        );
 
-        $inserted_data = $user->insert([
-            'role' => 'jobseeker',
-            'first_name' => request()->first_name,
-            'second_name' => request()->second_name,
-            'age' => request()->age,
-            'email' => request()->email,
-            'phone_number' =>request()->phone_number,
-            'password' => md5(request()->password)
-        ]);
+        $options = array(
+            'http' => array(
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method' => 'POST',
+                'content' => http_build_query($data)
+            )
+        );
 
-        session()->put('register_success_message','Signed up successfully!');
-        return redirect('/admin');
+        $context = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        $recaptchaResponse = json_decode($result);
+
+        if ($recaptchaResponse->success) {
+            if(request()->password !== request()->confirm_password) {
+                session()->put('register_error_message','Password and confirm password does not match!');
+                return back();
+            }
+
+            $user = new User();
+
+            $inserted_data = $user->insert([
+                'role' => 'jobseeker',
+                'first_name' => request()->first_name,
+                'second_name' => request()->second_name,
+                'age' => request()->age,
+                'email' => request()->email,
+                'phone_number' =>request()->phone_number,
+                'password' => md5(request()->password)
+            ]);
+
+            session()->put('register_success_message','Signed up successfully!');
+
+            extract((array) request());
+            $check = auth()->login(request()->email, request()->password);
+
+            if ($check) {
+                if(auth()->user('role') == 'admin') {
+                    return redirect('/admin/jobs');
+                }else {
+                    return redirect('/jobseeker/jobs');
+                }
+            } else {
+                return back();
+            }
+            // return redirect('/jobseeker/jobs');
+        } else {
+            // reCAPTCHA verification failed, show an error message or take appropriate action
+            // ...
+            session()->put('register_error_message','reCAPTCHA verification failed');
+            return back();
+        }
+
+        
     }
 
     public function jobs($location=null)
@@ -105,7 +155,11 @@ class WebsiteController
         $check = auth()->login($email, $password);
 
         if ($check) {
-            return redirect('/');
+            if(auth()->user('role') == 'admin') {
+                return redirect('/admin/jobs');
+            }else {
+                return redirect('/jobseeker/jobs');
+            }
         } else {
             return back();
         }

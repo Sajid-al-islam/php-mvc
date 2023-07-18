@@ -24,6 +24,7 @@
   <link href="<?= assets('frontend/') ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <link href="<?= assets('frontend/') ?>assets/css/style.css" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     .btn-get-started {
       margin-top: 30px;

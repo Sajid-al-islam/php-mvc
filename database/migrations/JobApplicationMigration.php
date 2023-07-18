@@ -2,15 +2,17 @@
 include_once(realpath('database/settings/Blueprint.php'));
 include_once(realpath('database/settings/DBSchema.php'));
 
-class ProductCategoryMigration
+class JobApplicationMigration
 {
     public function up()
     {
-        Schema::create('product_categories', function (Blueprint $table) {
+        Schema::create('job_applications', function (Blueprint $table) {
             $table->id();
-            $table->string('title',100)->nullable();
-            $table->string('image',50)->nullable()->unique();
+            $table->bigInteger('job_id');
+            $table->bigInteger('jobseeker_id');
+            $table->status();
             $table->timestamp();
         });
     }
 }
+
