@@ -8,6 +8,7 @@ class UserMigration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('role')->nullable();
             $table->string('first_name')->nullable();
             $table->string('second_name')->nullable();
             $table->integer('age')->nullable();

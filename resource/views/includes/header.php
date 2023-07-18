@@ -60,8 +60,23 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
-          <li><a class="nav-link scrollto" href="/login">login</a></li>
-          <li><a class="getstarted scrollto" href="/register">Sign up</a></li>
+          <?php
+          if (auth()->check()) {
+          ?>
+              <li class="nav-item">
+                  <a class="nav-link" href="/admin">admin</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" onclick="return confirm('do you want to logout?')" href="/logout">logout</a>
+              </li>
+          <?php
+          }
+          else {
+          ?>
+            <li><a class="nav-link scrollto" href="/login">login</a></li>
+            <li><a class="getstarted scrollto" href="/register">Sign up</a></li>
+          <?php } ?>
+           
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

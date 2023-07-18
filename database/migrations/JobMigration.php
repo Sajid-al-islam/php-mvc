@@ -2,15 +2,16 @@
 include_once(realpath('database/settings/Blueprint.php'));
 include_once(realpath('database/settings/DBSchema.php'));
 
-class BlogMigration
+class JobMigration
 {
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('title',100)->nullable();
             $table->text('description')->nullable();
             $table->string('image',50)->nullable();
+            $table->bigInteger('location_id')->nullable();
             $table->status();
             $table->timestamp();
         });

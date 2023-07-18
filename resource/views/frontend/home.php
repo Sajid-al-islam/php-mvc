@@ -41,7 +41,7 @@ resource_include('includes/header', [
         </div>
         <div class="row">
             <?php
-            foreach ($blogs as $key => $item) {
+            foreach ($jobs as $key => $item) {
 
             ?>
                 <div class="col-md-4">

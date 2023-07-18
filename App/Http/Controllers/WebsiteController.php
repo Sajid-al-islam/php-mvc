@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
+use App\Models\Job;
 use App\Models\User;
 use Symfony\Component\VarDumper\Cloner\Data;
 
@@ -10,9 +10,9 @@ class WebsiteController
 {
     public function home()
     {
-        $blog = new Blog();
+        $job = new Job();
         return view('frontend/home', [
-            'blogs' => $blog->select('*')->get()
+            'jobs' => $job->select('*')->get()
         ]);
     }
 
@@ -23,11 +23,11 @@ class WebsiteController
 
     public function register_submit() {
 
-        // dd(request()->all())
         $user = new User();
 
 
         $inserted_data = $user->insert([
+            'role' => 'jobseeker',
             'first_name' => request()->first_name,
             'second_name' => request()->second_name,
             'age' => request()->age,
@@ -50,13 +50,13 @@ class WebsiteController
     {
         return view('contact');
     }
-    public function blog()
+    public function job()
     {
-        echo " blog list";
+        echo " job list";
     }
-    public function blog_details($id, $title)
+    public function job_details($id, $title)
     {
-        echo " blog details";
+        echo " job details";
         // dd($_REQUEST);
         // dd($id, $title);
     }

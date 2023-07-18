@@ -26,7 +26,7 @@ resource_include('admin/layouts/header');
                             </thead>
                             <tbody>
                                 <?php
-                                foreach ($blogs as $key => $value) {
+                                foreach ($jobs as $key => $value) {
                                 ?>
                                     <tr>
                                         <td><?= $value->title ?></td>

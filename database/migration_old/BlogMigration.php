@@ -2,11 +2,11 @@
 
 include_once(realpath('database/migrations/MigrateSchema.php'));
 
-class BlogMigration
+class JobMigration
 {
 
     public $db;
-    public $table_name = 'blogs';
+    public $table_name = 'jobs';
     public $query = '';
 
     public function __construct()
