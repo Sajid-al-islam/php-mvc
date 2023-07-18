@@ -51,6 +51,15 @@ function inflector()
     return $inflector;
 }
 
+function check_permission() {
+    if(auth()->user('role') !== 'admin') {
+
+        echo "you are not authorized to view this page";
+    
+        return redirect('/not_authorized');
+    }
+}
+
 function back(){
     return header("Location:".$_SERVER['HTTP_REFERER']);
 }

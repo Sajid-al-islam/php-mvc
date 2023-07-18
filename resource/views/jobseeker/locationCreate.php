@@ -1,17 +1,14 @@
 <?php
-check_permission();
-
-
 resource_include('admin/layouts/header');
 ?>
 
+<div class="container-fluid">
+    <div class="row">
+        <?php
+        resource_include('admin/layouts/navbar');
+        ?>
 
-<div id="layoutSidenav">
-    <?php
-    resource_include('admin/layouts/navbar');
-    ?>
-    <div id="layoutSidenav_content">
-        <main>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="container my-5 py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
@@ -23,7 +20,7 @@ resource_include('admin/layouts/header');
                                 <div class="text-success">
                                     <?= session()->get('success_message') ?>
                                     <?php
-                                    session()->forget('success_message')
+                                        session()->forget('success_message')
                                     ?>
                                 </div>
                                 <form enctype="multipart/form-data" action="/admin/blog/create/store" method="POST">
@@ -47,3 +44,11 @@ resource_include('admin/layouts/header');
 <?php
 resource_include('admin/layouts/footer');
 ?>
+
+<script>
+ClassicEditor
+    .create(document.querySelector("#myTextarea"))
+    .catch(error => {
+        console.error( error );
+    } );
+</script>

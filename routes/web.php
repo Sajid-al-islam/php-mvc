@@ -3,6 +3,7 @@ include_once('./routes/Route.php');
 
 $app = new Route();
 $app->get('/','WebsiteController@home');
+$app->get('/not_authorized','WebsiteController@not_authorized');
 $app->get('/about','WebsiteController@about');
 $app->get('/gallery','WebsiteController@gallery');
 $app->get('/job','WebsiteController@job');
@@ -28,5 +29,11 @@ $app->get('/admin/job/create','Admin\AdminController@job_create');
 $app->post('/admin/job/create/store','Admin\AdminController@job_create_store');
 
 
+// jobseeker routes
+$app->get('/admin','Admin\AdminController@admin');
+$app->get('/admin/jobs','Admin\AdminController@job_list');
+
+$app->get('/admin/locations','Admin\AdminController@location_list');
+$app->get('/admin/location/create','Admin\AdminController@location_create');
 
 $app->start();

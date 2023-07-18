@@ -16,6 +16,10 @@ class WebsiteController
         ]);
     }
 
+    public function not_authorized() {
+        return view('frontend/not_authorized');
+    }
+
     public function register()
     {
         return view('auth/register');

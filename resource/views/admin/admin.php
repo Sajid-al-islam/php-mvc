@@ -1,15 +1,20 @@
 <?php
+check_permission();
 resource_include('admin/layouts/header');
 ?>
 
-<div class="container-fluid">
-    <div class="row">
-        <?php
+<div id="layoutSidenav">
+    <?php
         resource_include('admin/layouts/navbar');
-        ?>
-
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <h2>content</h2>
+    ?>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Dashboard</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </div>
         </main>
     </div>
 </div>
