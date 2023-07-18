@@ -49,9 +49,9 @@ resource_include('admin/layouts/header');
                                     <img width="100px" src="<?= assets($value->image) ?>" alt="">
                                 </td>
                                 <td>
-                                    <button class="btn btn-sm btn-warning mb-2">view</button>
-                                    <button class="btn btn-sm btn-primary mb-2">edit</button>
-                                    <button class="btn btn-sm btn-danger mb-2">delete</button>
+                                    <a href="/admin/job/details?id=<?= $value->id ?>" class="btn btn-sm btn-warning mb-2">view</a>
+                                    <!-- <a class="btn btn-sm btn-primary mb-2">edit</a> -->
+                                    <a onclick="return confirm('Are you sure, you want to delete?')" href="/admin/job/delete?id=<?= $value->id ?>" class="btn btn-sm btn-danger mb-2">delete</a>
                                 </td>
                             </tr>
                         <?php

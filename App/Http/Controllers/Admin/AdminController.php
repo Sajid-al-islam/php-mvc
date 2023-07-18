@@ -31,6 +31,28 @@ class AdminController
             'locations' => $location->select('*')->get()
         ]);
     }
+
+    public function job_details($job_id)
+    {
+        $job = new Job();
+
+        $data = $job->select('*')->where('id', '=', $job_id)->find($job_id);
+
+        // dd($data, $job_id);
+        return view('admin/job_details', [
+            'data' => $data,
+        ]);
+    }
+
+    public function job_delete($job_id)
+    {
+        $job = new Job();
+
+        $data = $job->where('id', '=', $job_id)->delete();
+
+        // dd($data, $job_id);
+        return back();
+    }
    
     public function job_create()
     {

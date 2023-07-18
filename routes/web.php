@@ -28,6 +28,8 @@ $app->get('/admin/location/create','Admin\AdminController@location_create');
 
 $app->get('/admin/job/create','Admin\AdminController@job_create');
 $app->post('/admin/job/create/store','Admin\AdminController@job_create_store');
+$app->get('/admin/job/details','Admin\AdminController@job_details')->params('id');
+$app->get('/admin/job/delete','Admin\AdminController@job_delete')->params('id');
 
 
 // jobseeker routes
