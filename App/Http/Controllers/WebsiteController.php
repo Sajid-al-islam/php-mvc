@@ -77,11 +77,16 @@ class WebsiteController
     {
         echo " job list";
     }
-    public function job_details($id, $title)
+    public function job_details($job_id)
     {
-        echo " job details";
-        // dd($_REQUEST);
-        dd($id, $title);
+        $job = new Job();
+
+        $data = $job->select('*')->where('id', '=', $job_id)->find($job_id);
+
+        // dd($data, $job_id);
+        return view('frontend/job_details', [
+            'data' => $data,
+        ]);
     }
     public function profile_details()
     {

@@ -55,7 +55,7 @@ resource_include('includes/header');
 
                                     <b>Location: </b> <?= $item->location ?><br>
 
-                                    <a href="/register" class="btn-get-started d-inline-flex align-items-center justify-content-center align-self-center me-3">
+                                    <a href="/job-details?id=<?= $item->id ?>" class="btn-get-started d-inline-flex align-items-center justify-content-center align-self-center me-3">
                                         <span>Read Description</span>
                                         <i class="bi bi-arrow-right"></i>
                                     </a>

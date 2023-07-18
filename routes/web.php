@@ -7,7 +7,8 @@ $app->get('/not_authorized','WebsiteController@not_authorized');
 $app->get('/jobs','WebsiteController@jobs');
 $app->get('/gallery','WebsiteController@gallery');
 $app->get('/job','WebsiteController@job');
-$app->get('/job-details','WebsiteController@job_details')->params('id','title');
+
+$app->get('/job-details','WebsiteController@job_details')->params('id');
 $app->get('/user/profile-details','WebsiteController@profile_details')->params('userId');
 
 $app->get('/contact','WebsiteController@contact');
