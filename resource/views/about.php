@@ -2,39 +2,48 @@
 // include_once('./resource/views/includes/header.php');
 resource_include('includes/header');
 ?>
-<section>
+
+<section class="py-5 my-5">
     <div class="container">
-        <h1>About page</h1>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            temporibus quae, fuga amet fugit quas praesentium debitis nostrum,
-            fugiat libero repellendus obcaecati accusamus, error deserunt sit v
-            oluptatum corrupti enim illum! Amet iusto dolores sapiente minima exce
-            pturi enim porro perspiciatis commodi labore laboriosam numquam assumenda
-            odit ducimus, nemo tempora quidem distinctio quia illo autem aspernatur!
-            Sunt, quo labore excepturi non consequuntur magni similique quam. Enim, l
-            aboriosam! Praesentium libero deleniti, asperiores pariatur beatae sunt s
-            it, iste nostrum at maxime molestiae nemo! Ea sapiente rerum, quisquam hic
-            ipsa ipsum in modi repellendus odio quod explicabo vitae iste, blanditiis v
-            el. Placeat dolorum eum sequi.
-        </p>
+        <div class="text-center mb-5">
+            <h2>All jobs</h2>
+        </div>
+        <div class="row">
+            <?php
+            foreach ($data as $key => $item) {
+
+            ?>
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-2">
+                                <img src="<?= assets($item->image) ?>" style="width: 200px" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-10">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= $item->title ?></h5>
+                                    <p class="card-text"><?= $item->description ?></p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="card mb-3">
+                        <div style="max-height: 250px; overflow: hidden;">
+                            <img src="<?= assets($item->image) ?>" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $item->title ?></h5>
+                            <p class="card-text"><?= $item->title ?></p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div> -->
+                </div>
+            <?php
+            }
+            ?>
+        </div>
     </div>
-    <table class="p-5 table table-hover table-bordered">
-        <tr>
-            <td>username</td>
-            <td>phone number</td>
-        </tr>
-        <?php
-        foreach ($data as $item) {
-        ?>
-            <tr>
-                <td><?= $item->name ?></td>
-                <td><?= $item->contact ?></td>
-            </tr>
-        <?php
-        }
-        ?>
-    </table>
 </section>
 
 <?php

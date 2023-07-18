@@ -34,6 +34,18 @@ resource_include('admin/layouts/header');
                                         <textarea id="myTextarea" cols="30" rows="10" name="description" class="form-control"></textarea>
                                     </div>
                                     <div class="form-group mb-3">
+                                        <label for="job_location">Job location</label>
+                                        <select name="location_id" class="form-control" id="job_location">
+                                        <?php
+                                            foreach ($locations as $item) {
+                                            ?>
+                                                <option value="<?= $item->name ?>"><?= $item->name ?></option>
+                                            <?php
+                                            }
+                                        ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
                                         <label for="">image</label>
                                         <input accept=".jpg,.jpeg,.png" type="file" name="image" class="form-control">
                                     </div>

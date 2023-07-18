@@ -44,11 +44,12 @@ class WebsiteController
         return redirect('/admin');
     }
 
-    public function about()
+    public function jobs()
     {
-        $user = new User();
-        $data = $user->select('*')->get();
+        $job = new Job();
+        $data = $job->select('*')->get();
         return view('about', ['data' => $data]);
+        // return view('about');
     }
     public function contact()
     {

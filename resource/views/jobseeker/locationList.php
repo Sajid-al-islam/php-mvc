@@ -1,21 +1,20 @@
 <?php
+check_permission();
 resource_include('admin/layouts/header');
 ?>
-
-<div class="container-fluid">
-    <div class="row">
-        <?php
-        resource_include('admin/layouts/navbar');
-        ?>
-
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<div id="layoutSidenav">
+    <?php
+    resource_include('admin/layouts/navbar');
+    ?>
+    <div id="layoutSidenav_content">
+        <main>
             <div class="container my-5 py-5">
                 <div class="card">
                     <div class="card-header">
                         <h2>Locations</h2>
                     </div>
                     <div class="card-body">
-                        <table class="table table-border table-striped">
+                        <table id="datatablesSimple" class="table table-border table-striped">
                             <thead>
                                 <tr>
                                     <th>title</th>

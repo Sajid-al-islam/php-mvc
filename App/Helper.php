@@ -60,6 +60,15 @@ function check_permission() {
     }
 }
 
+function check_jobseeker_permission() {
+    if(auth()->user('role') !== 'jobseeker') {
+
+        echo "you are not authorized to view this page";
+    
+        return redirect('/not_authorized');
+    }
+}
+
 function back(){
     return header("Location:".$_SERVER['HTTP_REFERER']);
 }
