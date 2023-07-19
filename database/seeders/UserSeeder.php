@@ -14,15 +14,15 @@ class UserSeeder
         $user->insert([
             'role' => 'jobseeker',
             'first_name' => 'mr',
-            'second_name' => 'tarek',
-            'email' => 'tarek@gmail.com',
+            'second_name' => 'jobseeker',
+            'email' => 'jobseeker1@gmail.com',
             'phone_number' => '+8801256456253',
             'password' => md5('12345678'),
         ]);
         $user->insert([
             'role' => 'jobseeker',
-            'first_name' => 'sharif',
-            'second_name' => 'ahmed',
+            'first_name' => 'mr',
+            'second_name' => 'jobseeker2',
             'email' => 'sharif@gmail.com',
             'phone_number' => '+8801256456253',
             'password' => md5('12345678'),

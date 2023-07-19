@@ -23,6 +23,15 @@ resource_include('jobseeker/layouts/header');
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <?php } ?>
+                    <?php if(session()->get('job_error_message')) { ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong><?= session()->get('job_error_message') ?></strong>
+                        <?php
+                        session()->forget('job_error_message')
+                        ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <?php } ?>
                 </div>
                 <h2 class="text-center my-5">My applied jobs</h2>
                 <table id="datatablesSimple" class="table table-border table-striped">
@@ -52,7 +61,7 @@ resource_include('jobseeker/layouts/header');
                                 </td>
                                 <td>
                                     <a href="/jobseeker/job/details?id=<?= $value->id ?>" class="btn btn-sm btn-primary mb-2">Details</a>
-                                    <a href="/jobseeker/job/details?id=<?= $value->id ?>" class="btn btn-sm btn-info mb-2">Add to favourite</a>
+                                    <a href="/jobseeker/job/add_to_favourite?id=<?= $value->id ?>" class="btn btn-sm btn-info mb-2">Add to favourite</a>
                                 </td>
                             </tr>
                         <?php
